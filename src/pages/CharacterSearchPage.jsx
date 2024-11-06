@@ -7,7 +7,7 @@ function CharacterSearch() {
 
   const [characters, setCharacters] = useState([])
   const [pgnum, setPageNum] = useState(1)
-  const { favorites, setFavorites } = useOutletContext()
+  const { addToFavorites } = useOutletContext()
 
   const getCharacters = async() => {
     let response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${pgnum}`)
@@ -16,11 +16,9 @@ function CharacterSearch() {
 
   const updatePageNum = () => {  
     setPageNum(prevPageNumber => prevPageNumber + 1)
-    console.log(pgnum)
   }
 
   useEffect(() =>{
-    console.log("hello")
     getCharacters()
   }, [pgnum])
 
@@ -32,8 +30,7 @@ function CharacterSearch() {
           <CharacterCard 
             key={character.id} 
             ind={character} 
-            favorites={favorites}
-            setFavorites={setFavorites}/>
+            addToFavorites={addToFavorites}/>
         ))}
         <button onClick={updatePageNum}>
           Next Page

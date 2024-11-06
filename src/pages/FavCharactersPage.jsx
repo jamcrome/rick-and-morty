@@ -1,14 +1,11 @@
 import { useOutletContext } from "react-router-dom"
 import CharacterCard from "../components/CharacterCard"
-import { useEffect } from "react"
 
 const FavCharactersPage = () => {
 
   const { favorites, setFavorites } = useOutletContext()
 
-  useEffect(() => {
-    console.log(favorites)
-  }, [favorites])
+  
 
   return (
     <>

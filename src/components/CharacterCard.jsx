@@ -2,9 +2,14 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom'
 
-function CharacterCard({ ind, setFavorites, favorites }) {
+function CharacterCard({ ind, addToFavorites }) {
+
   const navigate = useNavigate();
-  
+
+  const handleFavorite = () => {
+    addToFavorites(ind)
+  }
+
   return (
     <Card style={{ width: '12rem' }}>
       <Card.Img variant="top" src={ind.image} />
@@ -12,7 +17,7 @@ function CharacterCard({ ind, setFavorites, favorites }) {
         <Card.Title>{ind.name}</Card.Title>
         
         <Button variant="primary" onClick={()=>navigate(`/character-details/${ind.id}`)}>More Info</Button>
-        <Button variant="warning" onClick={()=>setFavorites([...favorites, ind])}>Add to Favorites</Button>
+        <Button variant="warning" onClick={()=>handleFavorite()}>Add to Favorites</Button>
       </Card.Body>
     </Card>
   );
