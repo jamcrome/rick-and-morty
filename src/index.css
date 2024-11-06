@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-#background {
+/* #background {
   background-image: url("./images/rick-and-morty-toilets-hd-wallpaper-preview.jpg");
   width: 100vh;
   height: 100vh;
   background-size: contain;
-}
+} */

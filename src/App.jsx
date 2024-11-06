@@ -1,23 +1,27 @@
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import { Outlet } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import BackgroundImage from '/src/images/rick-and-morty-toilets-hd-wallpaper-preview.jpg';
+import { useEffect, useState } from 'react';
 
 function App() {
   
+  const[favorites, setFavorites] = useState([])
+
+  useEffect(() => {
+    console.log(favorites)
+  }, [favorites])
+
   return (
     <>
       <NavBar />
       <div style={{ 
         backgroundImage: `url(${BackgroundImage})`,
-        backgroundSize: 'cover', // Adjust as needed
-        // backgroundPosition: 'center', // Adjust as needed
-        minHeight: '100vh' // Ensure the div covers the viewport
+        backgroundSize: 'cover',
+        minHeight: '100vh'
       }}>
-      <Outlet />
-      {/* Your content here */}
+      <Outlet context={{favorites, setFavorites}}/>
+      
       </div>
       
     </>
