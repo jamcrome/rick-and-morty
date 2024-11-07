@@ -24,16 +24,18 @@ function CharacterSearch() {
 
   return (
     <>
-      <h1>Character Search Page</h1>
-      <div className="flex flex-wrap gap-4">
+      <h1 className="text-center text-5xl pt-3">Character Search Page</h1>
+      <div className="flex flex-wrap gap-4 p-4">
         {characters.map((character) =>(
           <CharacterCard 
             key={character.id} 
             ind={character} 
             addToFavorites={addToFavorites}/>
         ))}
-        <button onClick={updatePageNum}>
-          Next Page
+      </div>
+      <div className="flex justify-center pb-4 text-2xl">
+        <button onClick={updatePageNum} className="rounded-full p-2.5 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-violet-300">
+        Next Page
         </button>
       </div>
     </>

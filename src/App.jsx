@@ -9,9 +9,10 @@ function App() {
   const[favorites, setFavorites] = useState([])
 
   const addToFavorites = (character) => {
-    if (!favorites.some((fav) => fav.id === character.id)) {
-      setFavorites((prevFavorites) => [...prevFavorites, character])
+    if (favorites.some((fav) => fav.id === character.id)) {
+      return;
     }
+    setFavorites((prevFavorites) => [...prevFavorites, character])
   }
 
   return (

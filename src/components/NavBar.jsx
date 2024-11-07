@@ -6,17 +6,20 @@ import { Link } from "react-router-dom"
 const NavBar = () => {
 
   return (
-    <Navbar expand="sm" className="bg-body-tertiary">
-      <Container >
-        <Navbar.Brand as={Link} to="/">The RickMortiest Menu</Navbar.Brand>
+    <Navbar 
+      sticky="top" 
+      expand="sm" 
+      className="bg-body-tertiary ">
+      <Container className="m-0">
+        <Navbar.Brand as={Link} to="/" className="text-xl font-semibold">The RickMortiest Menu</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
   
         <Navbar.Collapse id="basic-navbar-nav" >
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="about/">About</Nav.Link>
-            <Nav.Link as={Link} to="character-search/">Characters</Nav.Link>
-            <Nav.Link as={Link} to="favorite-characters/">Favorites</Nav.Link>
+          <Nav className="">
+            <Nav.Link as={Link} to="/" className="hover:text-blue-500">Home</Nav.Link>
+            <Nav.Link as={Link} to="about/" className="hover:text-blue-500">About</Nav.Link>
+            <Nav.Link as={Link} to="character-search/" className="hover:text-blue-500">Characters</Nav.Link>
+            <Nav.Link as={Link} to="favorite-characters/" className="hover:text-blue-500">Favorites</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

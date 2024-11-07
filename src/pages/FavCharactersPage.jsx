@@ -9,15 +9,18 @@ const FavCharactersPage = () => {
 
   return (
     <>
-      <h2>Favorite Characters Page</h2>
-      <div className="flex flex-wrap gap-4">
+      <h2 className="text-center">Favorite Characters Page</h2>
+      <div className="flex flex-wrap gap-4 p-4 text-center">
         {favorites ? (favorites.map((character)=>(
           <CharacterCard 
             key={character.id} 
             ind={character} 
             setFavorites={setFavorites} 
             favorites={favorites}/>
-          ))) : (<h3>No Character Selected</h3>)
+          ))) : 
+          (<h3 className="center">
+            No Character Selected
+          </h3>)
         }
       </div>
     </>

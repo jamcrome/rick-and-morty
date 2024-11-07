@@ -20,14 +20,23 @@ function CharacterDetails() {
     <>
      {selected ? (
       <>
-        <h1>{selected.name}</h1>
-        <img src={selected.image}/>
-        <ul>
-          <li>Species: {selected.species}</li>
-          <li>Origin: {selected.origin.name}</li>
-          <li>Location: {selected.location.name}</li>
-          <li>Status: {selected.status}</li>
-        </ul>
+        <div className="flex flex-row p-10">
+          <div>
+            <img src={selected.image} className="size-50 rounded-full"/>
+            
+          </div>
+          <div className="flex flex-col p-14">
+            <h1 className="text-4xl text-center py-2">{selected.name}</h1>
+            <ul>
+              <li>Species: {selected.species}</li>
+              <li>Origin: {selected.origin.name}</li>
+              <li>Location: {selected.location.name}</li>
+              <li>Status: {selected.status}</li>
+            </ul>
+          </div>
+          
+        </div>
+        
       </>
      ) : null}
      
