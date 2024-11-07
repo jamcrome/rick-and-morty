@@ -6,10 +6,10 @@ function HomePage() {
   
   return (
     <>
-      <div className="text-center">
-        <h1 className="">Rick and Morty Home Page!</h1>
-        <h3>For fans both new and old, this site contains all the Rick and Morty information you need and more!</h3>
-              
+      <div className="text-left text-center pt-60">
+        <h1 className="text-5xl py-5 font-display">Morty's Home Rickspage!</h1>
+        <h3 className="text-3xl">For fans both new and old, this site contains all the Rick and Morty information you need and more!</h3>
+        {/* <p>blah</p> */}
       </div>
       
     </>
