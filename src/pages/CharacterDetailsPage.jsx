@@ -26,8 +26,8 @@ function CharacterDetails() {
             
           </div>
           <div className="flex flex-col p-14">
-            <h1 className="text-4xl text-center py-2">{selected.name}</h1>
-            <ul>
+            <h1 className="text-4xl  py-2">{selected.name}</h1>
+            <ul className="text-xl">
               <li>Species: {selected.species}</li>
               <li>Origin: {selected.origin.name}</li>
               <li>Location: {selected.location.name}</li>

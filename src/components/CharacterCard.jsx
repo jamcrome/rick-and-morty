@@ -11,13 +11,15 @@ function CharacterCard({ ind, addToFavorites }) {
   }
 
   return (
-    <Card style={{ width: '12rem' }}>
-      <Card.Img variant="top" src={ind.image} />
-      <Card.Body>
-        <Card.Title>{ind.name}</Card.Title>
+    <Card className="p-2 bg-neutral-300" style={{ width: '12rem' }}>
+      <Card.Img className="pb-2 rounded-md" variant="top" src={ind.image} />
+      <Card.Body className="flex flex-col p-1 justify-between">
+        <Card.Title className='text-center'>{ind.name}</Card.Title>
+        <div className="flex flex-col">
+          <Button variant="primary" onClick={()=>navigate(`/character-details/${ind.id}`)}>More Info</Button>
+          <Button variant="warning" onClick={()=>handleFavorite()}>Add to Favorites</Button>
+        </div>
         
-        <Button variant="primary" onClick={()=>navigate(`/character-details/${ind.id}`)}>More Info</Button>
-        <Button variant="warning" onClick={()=>handleFavorite()}>Add to Favorites</Button>
       </Card.Body>
     </Card>
   );
